@@ -1,1 +1,1 @@
-# JAVA-MiniProject
+# HOUSE RENT PORTAL
