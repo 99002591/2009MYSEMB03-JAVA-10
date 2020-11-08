@@ -34,6 +34,8 @@ public class WelcomePage_User {
 		System.out.println("");
 		System.out.println("[1] . New User? Enter 1 for Registration");
 		System.out.println("[2] . Already an user? Enter 2  to login");
+		System.out.println("");
+		System.out.println("");
 	}
 
 	public int kindOfUser() {
