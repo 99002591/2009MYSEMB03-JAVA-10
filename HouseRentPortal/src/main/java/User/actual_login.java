@@ -115,6 +115,7 @@ public class actual_login {
 			System.out.println("   LOGIN SUCCESSFUL");
 			System.out.println("++++++++++++++++++++");
 			// LOGIN FUNCTION // JUST DISPLAY HIS INFO IN GOOD FORMAT
+			postLoginObject.owner_display();
 		} else if (userID_validity == true && passCode_validity == false) {
 			System.out.println("++++++++++++++++++++");
 			System.out.println("  Incorrect password");

@@ -2,3 +2,4 @@ OWNER<>username<>password<>Name<>email<>phone<>size<>locality<>bhk<>rent<>securi
 OWNER<>milind11<>milind.mohapatra<>Milind Mohapatra<>mohapatra@gmail.com<>9090480487<>1500<>ctc<>3<>20000<>40000<>
 OWNER<>dasamit98<>password<>Amit Das<>dasamit98@gmail.com<>9776246878<>1200<>BBSR<>2<>12000<>20000<>
 OWNER<>testData<>testData<>testData<>testData<>testData<>testData<>testData<>testData<>testData<>testData<>
+TENANT<>amit98<>password<>Amit<>random@gmail.com<>123456789<>
