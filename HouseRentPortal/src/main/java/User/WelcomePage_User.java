@@ -37,6 +37,7 @@ public class WelcomePage_User {
 	}
 
 	public int kindOfUser() {
+		@SuppressWarnings("resource")
 		Scanner user_input = new Scanner(System.in);
 		int kindOfUser_choice = 0;
 		int ownerORtenant = 0;

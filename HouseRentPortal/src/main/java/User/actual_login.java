@@ -10,7 +10,9 @@ import java.util.Scanner;
 public class actual_login {
 	static boolean userID_validity;
 	static boolean passCode_validity;
-
+	String Array_cred[] = null;
+	postLogin postLoginObject = new postLogin();
+	
 	public void tenant_login() throws IOException {
 		Scanner user_input = new Scanner(System.in);
 		System.out.println("");
@@ -29,10 +31,43 @@ public class actual_login {
 			String[] credentials;
 			while ((data = bReader.readLine()) != null) {
 				credentials = data.split("<>");
-				System.out.println(Arrays.deepToString(credentials));
+				if (Arrays.stream(credentials).anyMatch("TENANT"::equals)) {
+					if (Arrays.stream(credentials).anyMatch(userID::equals)) {
+						userID_validity = true;
+						if (Arrays.stream(credentials).anyMatch(passCode::equals)) {
+							passCode_validity = true;
+						} else {
+							passCode_validity = false;
+						}
+						break;
+					} else {
+						userID_validity = false;
+					}
+				} else {
+					System.out.println("SYSTEM ERROR, RESTART THE PROGRAM");
+				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		}
+		
+		// VALIDATE LOGIN
+		if (userID_validity == true && passCode_validity == true) {
+			System.out.println("++++++++++++++++++++");
+			System.out.println("   LOGIN SUCCESSFUL");
+			System.out.println("++++++++++++++++++++");
+			// LOGIN FUNCTION // SEARCH FUNCTION
+			postLoginObject.display_postLogin_menu();
+		} else if (userID_validity == true && passCode_validity == false) {
+			System.out.println("++++++++++++++++++++");
+			System.out.println("  Incorrect password");
+			System.out.println("++++++++++++++++++++");
+			tenant_login();
+		} else if (userID_validity == false) {
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("User not registered, Consider registering before loggin in");
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			tenant_login();
 		}
 	}
 
@@ -54,44 +89,42 @@ public class actual_login {
 			String data;
 			while ((data = bReader.readLine()) != null) {
 				credentials = data.split("<>");
-			}
-			if (Arrays.deepToString(credentials).contains("OWNER")) {
-				System.out.println(Arrays.deepToString(credentials).contains("OWNER"));
-				if (Arrays.deepToString(credentials).contains(userID)) {
-					userID_validity = true;
+				if (Arrays.stream(credentials).anyMatch("OWNER"::equals)) {
+					if (Arrays.stream(credentials).anyMatch(userID::equals)) {
+						userID_validity = true;
+						if (Arrays.stream(credentials).anyMatch(passCode::equals)) {
+							passCode_validity = true;
+						} else {
+							passCode_validity = false;
+						}
+						break;
+					} else {
+						userID_validity = false;
+					}
 				} else {
-					userID_validity = false;
+					System.out.println("SYSTEM ERROR, RESTART THE PROGRAM");
 				}
-			} else {
-				System.out.println("SYTEM ERROR, RESTART THE PROGRAM");
 			}
-			
-			if (Arrays.deepToString(credentials).contains("OWNER")) {
-				if (Arrays.deepToString(credentials).contains(passCode)) {
-					passCode_validity = true;
-				} else {
-					passCode_validity = false;
-				}
-			} else {
-				System.out.println("SYTEM ERROR, RESTART THE PROGRAM");
-			}
-
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
 		// VALIDATE LOGIN
 		if (userID_validity == true && passCode_validity == true) {
-			System.out.println("LOGIN SUCCESSFUL");
-			// LOGIN FUNCTION
+			System.out.println("++++++++++++++++++++");
+			System.out.println("   LOGIN SUCCESSFUL");
+			System.out.println("++++++++++++++++++++");
+			// LOGIN FUNCTION // JUST DISPLAY HIS INFO IN GOOD FORMAT
 		} else if (userID_validity == true && passCode_validity == false) {
 			System.out.println("++++++++++++++++++++");
 			System.out.println("  Incorrect password");
 			System.out.println("++++++++++++++++++++");
+			owner_login();
 		} else if (userID_validity == false) {
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 			System.out.println("User not registered, Consider registering before loggin in");
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			owner_login();
 		}
 	}
 }

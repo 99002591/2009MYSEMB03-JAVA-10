@@ -30,9 +30,9 @@ public class login extends actual_login{
 	public void login_choice(){
 		Scanner user_input = new Scanner(System.in);
 		int login_choice_input;
-		login_choice_input = user_input.nextInt();
 		boolean login_choice_validity = false;
 		do {
+			login_choice_input = user_input.nextInt();
 			if (login_choice_input == 1) {
 				try {
 					tenant_login();

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class actual_Registration implements Registration_common {
 	WelcomePage_User WelcomePage_UserObject = new WelcomePage_User();
-	
+
 	@Override
 	public void owner_Registration() {
 		display_Registration();
@@ -23,9 +23,9 @@ public class actual_Registration implements Registration_common {
 
 	public void Register() {
 		System.out.println(WelcomePage_UserObject.get_flag());
-		if (WelcomePage_UserObject.ownerORtenant_flag.equals("OWNER")) {
+		if (WelcomePage_User.ownerORtenant_flag.equals("OWNER")) {
 			owner_Registration();
-		} else if (WelcomePage_UserObject.ownerORtenant_flag.equals("TENANT")) {
+		} else if (WelcomePage_User.ownerORtenant_flag.equals("TENANT")) {
 			tenant_Registration();
 		} else {
 			System.out.println("SYSTEM HAYWIRE!, Reboot");
@@ -65,11 +65,10 @@ public class actual_Registration implements Registration_common {
 		String rent = user_input.nextLine();
 		System.out.println("What is the one time security deposit?");
 		String security = user_input.nextLine();
-		System.out.println("1");
 		try {
 			FileWriter fWriter = new FileWriter("UserData.txt", true);
-			BufferedWriter bWriter = new BufferedWriter(fWriter);	
-			bWriter.write("OWNER <> ");
+			BufferedWriter bWriter = new BufferedWriter(fWriter);
+			bWriter.write("OWNER<>");
 			bWriter.write(username + "<>");
 			bWriter.write(password + "<>");
 			bWriter.write(Name + "<>");
@@ -84,11 +83,12 @@ public class actual_Registration implements Registration_common {
 			bWriter.flush();
 			bWriter.close();
 			fWriter.close();
-			System.out.println("3");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("4");
+		System.out.println("+++++++++++++++++++++++++++");
+		System.out.println("  REGISTRATION SUCCESFUL");
+		System.out.println("+++++++++++++++++++++++++++");
 	}
 
 	public void Register_tenant() {
@@ -114,24 +114,26 @@ public class actual_Registration implements Registration_common {
 		String email = user_input.nextLine();
 		System.out.println("Enter your phone number");
 		Integer phone = user_input.nextInt();
-		
+
 		try {
 			FileWriter fWriter = new FileWriter("UserData.txt", true);
-			BufferedWriter bWriter = new BufferedWriter(fWriter);	
-			bWriter.write("TENANT <> ");
+			BufferedWriter bWriter = new BufferedWriter(fWriter);
+			bWriter.write("TENANT<>");
 			bWriter.write(username + "<>");
 			bWriter.write(password + "<>");
 			bWriter.write(Name + "<>");
 			bWriter.write(email + "<>");
 			bWriter.write(phone + "<>");
-			bWriter.write("\n");
+			bWriter.write("\r");
 			bWriter.flush();
 			bWriter.close();
 			fWriter.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		System.out.println("+++++++++++++++++++++++++++");
+		System.out.println("  REGISTRATION SUCCESFUL");
+		System.out.println("+++++++++++++++++++++++++++");
 	}
 
 }
