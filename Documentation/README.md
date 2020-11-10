@@ -2,8 +2,8 @@
 
 ## DIRECTORIES
 
-    > - javaDoc
-    > - UML diagrams
+> - javaDoc
+> - UML diagrams
 
 ### javaDoc 
 
