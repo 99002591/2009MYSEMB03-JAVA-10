@@ -133,7 +133,7 @@ public class actual_login {
 			System.out.println("++++++++++++++++++++");
 			System.out.println("   LOGIN SUCCESSFUL");
 			System.out.println("++++++++++++++++++++");
-			postLoginObject.owner_display();
+			postLoginObject.owner_display(userID);
 		} else if (userID_validity == true && passCode_validity == false) {
 			System.out.println("++++++++++++++++++++");
 			System.out.println("  Incorrect password");

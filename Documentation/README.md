@@ -12,3 +12,4 @@
 ### UML diagrams
 
 > - Contains tthe activity diagram explaining the code flow
+

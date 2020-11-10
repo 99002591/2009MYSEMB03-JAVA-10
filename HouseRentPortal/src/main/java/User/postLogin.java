@@ -24,7 +24,7 @@ public class postLogin {
 	public void display_postLogin_menu() {
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println(" ");
-		System.out.println("Welcome User");
+		System.out.println("           Welcome User");
 		System.out.println(" ");
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
@@ -112,8 +112,10 @@ public class postLogin {
 	 * This functions reads the userdata file and converts the data into
 	 * user interpretable format
 	 * Displays relevant information to the owner
+	 * @param userID the username of the owner
+	 * @return 0 when done executing
 	 */
-	public void owner_display() {
+	public int owner_display(String userID) {
 		System.out.println(" ");
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
@@ -126,6 +128,7 @@ public class postLogin {
 			String[] credentials;
 			while ((data = bReader.readLine()) != null) {
 				credentials = data.split("<>");
+				if(Arrays.stream(credentials).anyMatch(userID::equals)) {
 				System.out.println("NAME OF OWNER : " + credentials[3]);
 				System.out.println("EMAIL ID: " + credentials[4]);
 				System.out.println("PHONE NO. : " + credentials[5]);
@@ -135,10 +138,10 @@ public class postLogin {
 				System.out.println("RENT/MONTH : " + credentials[9]);
 				System.out.println("SECURITY DEPOSIT : " + credentials[10]);
 				found_flag = true;
-			}
+			}}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		postLogin_interface();
+		return 0;
 	}
 }
