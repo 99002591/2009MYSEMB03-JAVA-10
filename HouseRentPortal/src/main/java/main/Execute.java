@@ -21,7 +21,8 @@ public class Execute {
 		
 		MenuObject.display_menu_header();
 		welcome_choice = MenuObject.display_menu_options();
-		if (welcome_choice == 1) {
+		do {
+			if (welcome_choice == 1) {
 			WelcomePageObject.display_user_menu();
 			int kindOfUser_var = WelcomePageObject.kindOfUser();
 			if (kindOfUser_var == 1) {
@@ -42,7 +43,8 @@ public class Execute {
 			status = true;
 		} else {
 			status = false;
-		}
+		}}
+		while(status == false);
 
 	}
 }

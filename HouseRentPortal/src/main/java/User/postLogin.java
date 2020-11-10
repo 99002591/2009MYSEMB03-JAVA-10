@@ -86,6 +86,7 @@ public class postLogin {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		postLogin_interface();
 	}
 
 	public void owner_display() {
@@ -114,5 +115,6 @@ public class postLogin {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		postLogin_interface();
 	}
 }
