@@ -8,7 +8,9 @@ import java.util.Scanner;
 public interface Registration_common {
 	LocalDate localDate = LocalDate.now();
 	LocalTime localTime = LocalTime.now();
-	
+	/**
+	 * This is a UI component that has been reused by multiple other classes
+	 */
 	public default void display_Registration() {
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println(" ");
@@ -25,7 +27,13 @@ public interface Registration_common {
 		System.out.println(" ");
 		System.out.println("");
 	}
-		
+	
+	/**
+	 * interface method
+	 */
 	public void owner_Registration();
+	/**
+	 * interface method
+	 */
 	public void tenant_Registration();
 }

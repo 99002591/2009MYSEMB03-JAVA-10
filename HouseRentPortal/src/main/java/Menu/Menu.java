@@ -10,6 +10,9 @@ public class Menu {
 	LocalTime localTime = LocalTime.now();
 	public int final_choice = 0;
 	
+	/**
+	 * This function is part of the welcome page setup
+	 */
 	public void display_menu_header() {
 		System.out.println("+++++++++++++++++++++++++++++++++++++++");
 		System.out.println(" ");
@@ -22,7 +25,13 @@ public class Menu {
 		System.out.println("");
 		System.out.println("");
 	}
-
+	
+	/**
+	 * Shows the menu for the user to interact with.
+	 * Helps the user choose between regular user mode or admin mode.
+	 * @return final_choice integer type return (1 for User Mode, 2 for Admin Mode)
+	 * @throws InterruptedException
+	 */
 	public int display_menu_options() throws InterruptedException {
 		Scanner user_input = new Scanner(System.in);
 		System.out.println("[1] . Enter 1 for User Portal");

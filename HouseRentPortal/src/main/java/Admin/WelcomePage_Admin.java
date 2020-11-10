@@ -12,6 +12,9 @@ public class WelcomePage_Admin {
 	LocalDate localDate = LocalDate.now();
 	LocalTime localTime = LocalTime.now();
 
+	/**
+	 * This serves the purpose of keeping the UI uniform across pages
+	 */
 	public void display_admin_menu() {
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println(" ");
@@ -29,6 +32,12 @@ public class WelcomePage_Admin {
 		admin_password();
 	}
 
+	/**
+	 * Checks if the admin access password is correct
+	 * Incase of a correct password, forwards the admin into restricted area
+	 * Iterates over to ask user for password again, incase of wrong password
+	 * @return boolean Status of password entered
+	 */
 	private boolean admin_password() {
 		Scanner user_input = new Scanner(System.in);
 		boolean admin_access_status = false;
@@ -47,6 +56,9 @@ public class WelcomePage_Admin {
 		return admin_access_status;
 	}
 
+	/**
+	 * This methods is the UI placeholder, invoked after successful admin login
+	 */
 	public void display_admin_actual_menu() {
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println(" ");
@@ -63,6 +75,12 @@ public class WelcomePage_Admin {
 		info();
 	}
 
+	/**
+	 * Provides the admin with actionable choices
+	 * Reads from the userdata file to display details to the admin
+	 * when asked for
+	 * Coverts the read data into user interpretable format
+	 */
 	public void info() {
 		Scanner user_input = new Scanner(System.in);
 		int choice = user_input.nextInt();

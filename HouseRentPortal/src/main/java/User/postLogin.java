@@ -15,6 +15,12 @@ public class postLogin {
 	static String locality;
 	static boolean found_flag = false;
 
+	/**
+	 * THis method is invoked incase of a successful tenant login
+	 * This methods serves the purpose of maintaining the uniform UI look
+	 * This also makes sure that user can make multiple searches as long as he/she
+	 * doesn't get a match
+	 */
 	public void display_postLogin_menu() {
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println(" ");
@@ -31,6 +37,11 @@ public class postLogin {
 		} while (found_flag == false);
 	}
 
+	/**
+	 * Serves the purpose of taking the user input
+	 * Asks the user about the maximum rent they are willing to pay
+	 * Asks the user about the city they are looking to rent in
+	 */
 	public void postLogin_interface() {
 		@SuppressWarnings("resource")
 		Scanner user_input = new Scanner(System.in);
@@ -45,6 +56,13 @@ public class postLogin {
 		postLogin_searchResults();
 	}
 
+	/*
+	 * This methods serves multiple purposes listed below
+	 * 1.Reads the file containing the information about houses on rent
+	 * 2.Converts the read data into user interpratable format
+	 * 3.Searches through the entire database for potential matches as per user's seach criteria
+	 * 4.Displays the relevant information about any matches
+	 */
 	public void postLogin_searchResults() {
 		try {
 			FileReader fReader = new FileReader("UserData.txt");
@@ -88,7 +106,13 @@ public class postLogin {
 		}
 		postLogin_interface();
 	}
-
+	
+	/**
+	 * Incase of a successful owner login, this method is invoked
+	 * This functions reads the userdata file and converts the data into
+	 * user interpretable format
+	 * Displays relevant information to the owner
+	 */
 	public void owner_display() {
 		System.out.println(" ");
 		System.out.println("++++++++++++++++++++++++++++++++++++++");

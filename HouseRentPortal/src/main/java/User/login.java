@@ -9,6 +9,10 @@ public class login extends actual_login{
 	LocalDate localDate = LocalDate.now();
 	LocalTime localTime = LocalTime.now();
 
+	/**
+	 * Serves the purpose of displaying the user interface
+	 * @throws IOException
+	 */
 	public void login_menu() throws IOException {
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		System.out.println(" ");
@@ -27,6 +31,11 @@ public class login extends actual_login{
 		login_choice();
 	}
 
+	/**
+	 * Takes into account the user's choice whether to login as an Owner or Tenant
+	 * This method also recursively calls respective login methods for 
+	 * tenant or owner based upon the user's choice
+	 */
 	public void login_choice(){
 		Scanner user_input = new Scanner(System.in);
 		int login_choice_input;

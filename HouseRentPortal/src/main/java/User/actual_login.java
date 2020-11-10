@@ -13,6 +13,16 @@ public class actual_login {
 	String Array_cred[] = null;
 	postLogin postLoginObject = new postLogin();
 	
+	/**
+	 * This method has the following functions for the tenant login
+	 * 1.Take as input the username
+	 * 2.Take as input the password
+	 * 3.Read the file containing all userdata and store them in a iterable list
+	 * 4.Iterate through the list to check for valid credentials
+	 * 5.Redirect user to search for property page incase of success
+	 * 6.Redirect user to enter credentials again incase of incorect credentials
+	 * @throws IOException
+	 */
 	public void tenant_login() throws IOException {
 		Scanner user_input = new Scanner(System.in);
 		System.out.println("");
@@ -56,7 +66,6 @@ public class actual_login {
 			System.out.println("++++++++++++++++++++");
 			System.out.println("   LOGIN SUCCESSFUL");
 			System.out.println("++++++++++++++++++++");
-			// LOGIN FUNCTION // SEARCH FUNCTION
 			postLoginObject.display_postLogin_menu();
 		} else if (userID_validity == true && passCode_validity == false) {
 			System.out.println("++++++++++++++++++++");
@@ -71,6 +80,16 @@ public class actual_login {
 		}
 	}
 
+	/**
+	 * This method has the following functions for the owner login
+	 * 1.Take as input the username
+	 * 2.Take as input the password
+	 * 3.Read the file containing all userdata and store them in a iterable list
+	 * 4.Iterate through the list to check for valid credentials
+	 * 5.Redirect user to next page
+	 * 6.Redirect user to enter credentials again incase of incorect credentials
+	 * @throws IOException
+	 */
 	public void owner_login() throws IOException {
 		String[] credentials = null;
 		Scanner user_input = new Scanner(System.in);
@@ -114,7 +133,6 @@ public class actual_login {
 			System.out.println("++++++++++++++++++++");
 			System.out.println("   LOGIN SUCCESSFUL");
 			System.out.println("++++++++++++++++++++");
-			// LOGIN FUNCTION // JUST DISPLAY HIS INFO IN GOOD FORMAT
 			postLoginObject.owner_display();
 		} else if (userID_validity == true && passCode_validity == false) {
 			System.out.println("++++++++++++++++++++");

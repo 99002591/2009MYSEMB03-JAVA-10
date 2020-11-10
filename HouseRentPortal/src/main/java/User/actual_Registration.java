@@ -8,12 +8,20 @@ import java.util.Scanner;
 public class actual_Registration implements Registration_common {
 	WelcomePage_User WelcomePage_UserObject = new WelcomePage_User();
 
+	/**
+	 * @Override methods from interface
+	 * Callback function for owner registration
+	 */
 	@Override
 	public void owner_Registration() {
 		display_Registration();
 		Register_owner();
 	}
 
+	/**
+	 * @Override method from interface
+	 * Callback function for tenant registration
+	 */
 	@Override
 	public void tenant_Registration() {
 		display_Registration();
@@ -21,6 +29,11 @@ public class actual_Registration implements Registration_common {
 
 	}
 
+	
+	/**
+	 * Compares the input to decide whether to register user as owner or tenant
+	 * callback to relevant registration functions
+	 */
 	public void Register() {
 		System.out.println(WelcomePage_UserObject.get_flag());
 		if (WelcomePage_User.ownerORtenant_flag.equals("OWNER")) {
@@ -32,6 +45,13 @@ public class actual_Registration implements Registration_common {
 		}
 	}
 
+	/**
+	 * Owner registration function
+	 * 1.Asks the user multiple details and store the name in local variables
+	 * 2.After all input open the UserData file and write all the collected data in proper format.
+	 * 3.Adds the data about whether the user is owner/tenant binded with each entry.
+	 * 4.Prompts the user about successful registration
+	 */
 	public void Register_owner() {
 		System.out.println("");
 		System.out.println("+++++++++++++++++++++++++++++++++++");
@@ -46,7 +66,6 @@ public class actual_Registration implements Registration_common {
 
 		System.out.println("Choose a unique username");
 		String username = user_input.nextLine();
-//		String username_valid = user_input.nextLine();
 		System.out.println("Choose a password");
 		String password = user_input.nextLine();
 		System.out.println("Enter your NAME");
@@ -91,6 +110,13 @@ public class actual_Registration implements Registration_common {
 		System.out.println("+++++++++++++++++++++++++++");
 	}
 
+	/**
+	 * Tenant registration function
+	 * 1.Asks the user multiple details and store the name in local variables
+	 * 2.After all input open the UserData file and write all the collected data in proper format
+	 * 3.Adds the data about whether the user is owner/tenant binded with each entry.
+	 * 4.Prompts the user about successful registration
+	 */
 	public void Register_tenant() {
 		System.out.println("");
 		System.out.println("+++++++++++++++++++++++++++++++++++");
@@ -105,7 +131,6 @@ public class actual_Registration implements Registration_common {
 
 		System.out.println("Choose a unique username");
 		String username = user_input.nextLine();
-//		String username_valid = user_input.nextLine();
 		System.out.println("Choose a password");
 		String password = user_input.nextLine();
 		System.out.println("Enter your NAME");

@@ -1,5 +1,8 @@
 package main;
-
+/**
+ * @author Amit Das
+ * 		   PS No. 99002591
+ */
 import java.io.IOException;
 
 import Admin.WelcomePage_Admin;
@@ -11,6 +14,12 @@ import User.login;
 public class Execute {
 	static int welcome_choice = 0;
 
+	/**
+	 * main function
+	 * Creates objects of all required classes and calls the methods as and when required
+	 * @param args
+	 * @throws InterruptedException
+	 */
 	public static void main(String[] args) throws InterruptedException {
 		boolean status;
 		Menu MenuObject = new Menu();
