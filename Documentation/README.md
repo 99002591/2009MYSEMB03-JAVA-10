@@ -3,7 +3,6 @@
 ## DIRECTORIES
 
 > - javaDoc
-> - UML diagrams
 
 ### javaDoc 
 
