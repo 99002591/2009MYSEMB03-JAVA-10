@@ -13,3 +13,6 @@
 > - ARCHITECHTURE : Contains all the UML Diagrams
 > - REQUIREMENTS :  Contains the High level as well as low level requirements of the project
 > - TEST PLANS : Contains all the test plans for the project
+
+
+![java-gitinsp](https://user-images.githubusercontent.com/71481671/98774422-fbf2c480-2410-11eb-9f79-938346495a82.PNG)
